@@ -81,8 +81,7 @@ button.gray{
 .small{
     font-size:14px
 }
-    
-/* Responsive layout */
+
 @media (max-width: 420px) {
   .calc {
     width: 100%;
@@ -121,7 +120,6 @@ button.gray{
   }
 }
 
-/* Điện thoại nhỏ hơn (ví dụ iPhone SE, Android mini) */
 @media (max-width: 360px) {
   .calc {
     padding: 10px;
@@ -153,7 +151,6 @@ button.gray{
   }
 }
 
-/* Cực nhỏ (dưới 320px hoặc chế độ chia đôi màn hình) */
 @media (max-width: 320px) {
   .calc {
     transform: scale(0.85);
