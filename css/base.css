@@ -1,17 +1,11 @@
 ﻿:root {
-    --bg: #f3f3f3; /* nền tổng thể xám rất nhạt */
-    --panel: #ffffff; /* màn hình hiển thị trắng tinh */
-    /* Nút cơ bản */
-    --button: #ffffff; /* nút số trắng */
-    --button-border: #dcdcdc; /* viền nhẹ cho nút */
-    /* Nút toán tử và "=" */
-    --accent: #0078D7; /* xanh Windows 11 */
-    --accent-2: #005a9e; /* xanh đậm hơn để tạo gradient nhẹ */
-    /* Nút chức năng (C, CE, %, ...) */
-    --glass: #f0f0f0; /* xám sáng cho nhóm chức năng */
-    /* Màu chữ */
-    --text: #000000; /* chữ đen rõ */
-    --muted: #444444;
+    --bg: #e0e0e0;
+    --panel: #f5f5f5;
+    --button: #ffffff;
+    --accent: #0078d7;
+    --accent-2: #005a9e;
+    --muted: #555555;
+    --glass: rgba(0, 0, 0, 0.05);
     font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
 }
 
@@ -22,7 +16,7 @@
 html,body{
     height:100%;
     margin:0;
-    background:linear-gradient(180deg,#071021 0%, #07112a 60%);
+    background: var(--bg);
     display:flex;align-items:center;
     justify-content:center;
     padding:24px;

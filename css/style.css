@@ -46,30 +46,27 @@
     grid-template-columns:repeat(4,1fr);
     gap:10px;
 }
-
-button.key {
-    border: 1px solid var(--button-border);
-    background: var(--button);
-    transition: background 0.2s, box-shadow 0.2s;
+    
+button.key{
+    background:var(--button);
+    border:0;
+    padding:16px;
+    border-radius:10px;
+    font-size:18px;
+    color:inherit;
+    cursor:pointer;
+    outline:none;
+    box-shadow: 0 3px 0 rgba(0,0,0,0.35);
 }
-
-    button.key:hover {
-        background: #f3f3f3;
-    }
-
-button.op {
-    background: var(--accent);
-    color: white;
-    border: none;
-}
-
-    button.op:hover {
-        background: #006cc1;
-    }
     
 button.key:active{
     transform:translateY(2px);
     box-shadow:none
+}
+    
+button.op{
+    background:linear-gradient(180deg,var(--accent),var(--accent-2));
+    color:white
 }
     
 button.wide{
