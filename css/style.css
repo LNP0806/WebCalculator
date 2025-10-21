@@ -1,0 +1,179 @@
+.calc{
+    width: 360px;
+    border-radius:16px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    padding:18px;
+    box-shadow: 0 10px 30px rgba(2,6,23,0.6), inset 0 1px 0 rgba(255,255,255,0.02);
+    color: #e6eef8;
+}
+
+.screen{
+    background:var(--panel);
+    border-radius:10px;
+    padding:14px;
+    display:flex;flex-direction:column;gap:6px;
+    margin-bottom:14px;
+    min-height:96px;
+}
+
+.memory-indicator{
+    font-size:12px;
+    color:var(--muted);
+    opacity:0.9
+}
+    
+.expr{
+    font-size:14px;
+    color:var(--muted);
+    min-height:18px;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap
+}
+    
+.output{
+    height: 36px;
+    font-size:32px;
+    font-weight:600;
+    text-align:right;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap
+}
+    
+.kbd{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:10px;
+}
+    
+button.key{
+    background:var(--button);
+    border:0;
+    padding:16px;
+    border-radius:10px;
+    font-size:18px;
+    color:inherit;
+    cursor:pointer;
+    outline:none;
+    box-shadow: 0 3px 0 rgba(0,0,0,0.35);
+}
+    
+button.key:active{
+    transform:translateY(2px);
+    box-shadow:none
+}
+    
+button.op{
+    background:linear-gradient(180deg,var(--accent),var(--accent-2));
+    color:white
+}
+    
+button.wide{
+    grid-column: span 2
+}
+    
+button.gray{
+    background:var(--glass);
+    color:var(--muted)
+}
+    
+.small{
+    font-size:14px
+}
+    
+/* Responsive layout */
+@media (max-width: 420px) {
+  .calc {
+    width: 100%;
+    max-width: 360px;
+    padding: 12px;
+    border-radius: 12px;
+    transform: scale(0.95);
+    transform-origin: top center;
+  }
+
+  .screen {
+    padding: 10px;
+    min-height: 80px;
+  }
+
+  .expr {
+    font-size: 12px;
+  }
+
+  .output {
+    font-size: 24px;
+  }
+
+  .kbd {
+    gap: 8px;
+  }
+
+  button.key {
+    padding: 14px;
+    font-size: 16px;
+    border-radius: 8px;
+  }
+
+  button.small {
+    font-size: 12px;
+  }
+}
+
+/* Điện thoại nhỏ hơn (ví dụ iPhone SE, Android mini) */
+@media (max-width: 360px) {
+  .calc {
+    padding: 10px;
+    border-radius: 10px;
+    transform: scale(0.9);
+  }
+
+  .screen {
+    padding: 8px;
+    min-height: 70px;
+  }
+
+  .expr {
+    font-size: 11px;
+  }
+
+  .output {
+    font-size: 20px;
+  }
+
+  .kbd {
+    gap: 6px;
+  }
+
+  button.key {
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 8px;
+  }
+}
+
+/* Cực nhỏ (dưới 320px hoặc chế độ chia đôi màn hình) */
+@media (max-width: 320px) {
+  .calc {
+    transform: scale(0.85);
+    transform-origin: top center;
+  }
+
+  .screen {
+    min-height: 60px;
+  }
+
+  .kbd {
+    gap: 5px;
+  }
+
+  button.key {
+    padding: 8px;
+    font-size: 13px;
+  }
+
+  .output {
+    font-size: 18px;
+  }
+}

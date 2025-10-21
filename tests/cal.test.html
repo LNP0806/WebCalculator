@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculator Unit Tests (HTML Mode)</title>
+  <style>
+    table { width: 80%; margin: 20px auto; border-collapse: collapse; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: center; }
+    th { background-color: #f2f2f2; }
+    .pass { color: green; font-weight: bold; }
+    .fail { color: red; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h2 style="text-align:center;">Calculator Unit Tests (HTML Mode)</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Test</th>
+        <th>Expression</th>
+        <th>Expected</th>
+        <th>Actual</th>
+        <th>Result</th>
+      </tr>
+    </thead>
+    <tbody id="test-body"></tbody>
+  </table>
+
+  <script src="../js/cal.js"></script>
+  <script>
+    const tests = [
+      { name: "Addition", expr: "2 + 3", expected: 5, actual: calculator.add(2, 3) },
+      { name: "Subtraction", expr: "9 - 4", expected: 5, actual: calculator.subtract(9, 4) },
+      { name: "Multiplication", expr: "6 * 7", expected: 42, actual: calculator.multiply(6, 7) },
+      { name: "Division", expr: "8 / 2", expected: 4, actual: calculator.divide(8, 2) },
+      { name: "Square", expr: "9²", expected: 81, actual: calculator.square(9) },
+      { name: "Reciprocal", expr: "1/4", expected: 0.25, actual: calculator.reciprocal(4) },
+      { name: "Sqrt", expr: "√9", expected: 3, actual: calculator.sqrt(9) }
+    ];
+
+    const tbody = document.getElementById("test-body");
+
+    tests.forEach(t => {
+      const row = document.createElement("tr");
+      const pass = Math.abs(t.actual - t.expected) < 1e-9;
+      row.innerHTML = `
+        <td>${t.name}</td>
+        <td>${t.expr}</td>
+        <td>${t.expected}</td>
+        <td>${t.actual}</td>
+        <td class="${pass ? "pass" : "fail"}">${pass ? "PASS" : "FAIL"}</td>
+      `;
+      tbody.appendChild(row);
+    });
+  </script>
+</body>
+</html>
